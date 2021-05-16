@@ -35,7 +35,6 @@ public class ParticipantRestController {
 		if (participant == null) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
-
 		return new ResponseEntity<Participant>(participant, HttpStatus.OK);
 	}
 	// POST http://localhost:8080/participants
@@ -60,6 +59,7 @@ public class ParticipantRestController {
 		return new ResponseEntity<Participant>(participant, HttpStatus.NO_CONTENT);
 	}
 
+	//PUT
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<?> updateParticipant(@PathVariable("id") String login, @RequestBody Participant participant) {
 		Participant foundParticipant = participantService.findByLogin(login);

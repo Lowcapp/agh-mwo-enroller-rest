@@ -23,7 +23,7 @@ public class ParticipantService {
 	}
 
 	public Participant findByLogin(String login) {
-		return (Participant) DatabaseConnector.getInstance().getSession().get(Participant.class, login);
+		return (Participant) this.session.get(Participant.class, login);
 		
 	}
 
